@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<title>Siraj &amp; Angeli — Wedding Invitation</title>
+<meta name="description" content="Together we begin our forever — Siraj &amp; Angeli, Saturday August 1, 2026, Malta Venue, Duhok, Kurdistan.">
+<meta name="theme-color" content="#F9F0E0">
+<link rel="icon" href="data:,">
+
+<link rel="preload" href="assets/fonts/Cinzel-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Rufina-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/seal/envelope-still.jpg" as="image">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- =====================================================
+     ENVELOPE OVERLAY — static cover image; tap fades it out
+     while the opening VIDEO plays behind it (see js/main.js)
+===================================================== -->
+<div id="weiOverlay">
+  <img id="weiImg" src="assets/seal/envelope-still.jpg" alt="Open your invitation" draggable="false">
+  <div id="weiTapWrap">
+    <div class="wei-chevron" aria-hidden="true"></div>
+    <div id="weiTapLabel">Tap to open</div>
+  </div>
+</div>
+
+<!-- =====================================================
+     ENVELOPE-OPENING VIDEO — hidden until tap, then plays
+     once and fades out to reveal the page underneath
+===================================================== -->
+<div id="weiVideoWrap">
+  <video id="weiVideo" muted playsinline preload="auto">
+    <source src="assets/videos/envelope-open.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<!-- =====================================================
+     HERO — swan/fountain garden ambient video background
+===================================================== -->
+<header class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="auto" class="hero-video">
+      <source src="assets/videos/swan-pond-hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-names"><span>Siraj</span><span class="hero-amp">&amp;</span><span>Angeli</span></h1>
+    <p class="hero-eyebrow">Wedding Day</p>
+    <p class="hero-date">01.08.26</p>
+  </div>
+
+  <button type="button" class="scroll-indicator" id="scroll-indicator" aria-label="Scroll to explore">
+    <span>Scroll down</span>
+    <svg width="14" height="9" viewBox="0 0 14 9" aria-hidden="true"><path d="M1,1 L7,7 L13,1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</header>
+
+<main>
+
+<!-- =====================================================
+     BLESSING — torn-paper card, Basmala + intro
+===================================================== -->
+<section class="section blessing-section" id="blessing">
+  <div class="torn-card reveal-up">
+    <p class="blessing-arabic" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <p class="blessing-script">Two Souls<br>One Destiny<br>A Lifetime Written by Allah</p>
+  </div>
+  <div class="blessing-intro reveal-up">
+    <p class="blessing-heading">Dear Friends and Family</p>
+    <p class="blessing-text">Join us for an evening of love, laughter, duas, and unforgettable memories as we begin our forever.</p>
+  </div>
+</section>
+
+<!-- =====================================================
+     COUNTDOWN — plain numbers with colon separators
+===================================================== -->
+<section class="section countdown-section" id="countdown">
+  <div class="countdown-row reveal-up" id="countdown-grid" data-wedding-date="2026-08-01T17:00:00">
+    <div class="countdown-unit"><span class="countdown-num" data-count="days">00</span><span class="countdown-label">Days</span></div>
+    <span class="countdown-colon">:</span>
+    <div class="countdown-unit"><span class="countdown-num" data-count="hours">00</span><span class="countdown-label">Hours</span></div>
+    <span class="countdown-colon">:</span>
+    <div class="countdown-unit"><span class="countdown-num" data-count="minutes">00</span><span class="countdown-label">Minutes</span></div>
+    <span class="countdown-colon">:</span>
+    <div class="countdown-unit"><span class="countdown-num" data-count="seconds">00</span><span class="countdown-label">Seconds</span></div>
+  </div>
+  <p class="section-eyebrow reveal-up">The Celebration Begins In</p>
+</section>
+
+<!-- =====================================================
+     SCHEDULE OF EVENTS — torn-paper card, vertical timeline
+===================================================== -->
+<section class="section schedule-section" id="schedule">
+  <div class="torn-card schedule-card reveal-up">
+    <div class="card-flourish" aria-hidden="true"></div>
+    <h2 class="script-heading">Schedule of Events</h2>
+
+    <ol class="timeline-list">
+      <li class="timeline-row reveal-up">
+        <span class="timeline-time">5 PM</span>
+        <span class="timeline-marker" aria-hidden="true"></span>
+        <span class="timeline-title">Guest Arrival</span>
+      </li>
+      <li class="timeline-row reveal-up">
+        <span class="timeline-time">6 PM</span>
+        <span class="timeline-marker" aria-hidden="true"></span>
+        <span class="timeline-title">Nikkah Ceremony</span>
+      </li>
+      <li class="timeline-row timeline-row--rose reveal-up">
+        <span class="timeline-time">7 PM</span>
+        <span class="timeline-marker timeline-marker--rose" aria-hidden="true"></span>
+        <span class="timeline-title">Mocktail Hour</span>
+      </li>
+      <li class="timeline-row reveal-up">
+        <span class="timeline-time">8 PM</span>
+        <span class="timeline-marker" aria-hidden="true"></span>
+        <span class="timeline-title">Dinner</span>
+      </li>
+      <li class="timeline-row reveal-up">
+        <span class="timeline-time">9 PM</span>
+        <span class="timeline-marker" aria-hidden="true"></span>
+        <span class="timeline-title">Dance</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+<section class="section location-section" id="location">
+  <p class="script-heading reveal-up">Location</p>
+  <div class="gold-rule reveal-up" aria-hidden="true"></div>
+  <p class="location-venue reveal-up">Malta Venue</p>
+  <p class="location-address reveal-up">Address: Duhok, Kurdistan</p>
+
+  <svg class="location-icon reveal-up" width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+    <path d="M23,6 L23,16 M15,12 C15,7 31,7 31,12 L34,26 L12,26 Z" stroke="#B48C3D" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M8,34 L38,34" stroke="#B48C3D" stroke-width="1.2" stroke-linecap="round"/>
+    <circle cx="23" cy="6" r="1.8" fill="#B48C3D"/>
+    <path d="M12,34 L12,26 M34,34 L34,26" stroke="#B48C3D" stroke-width="1" opacity="0.7"/>
+  </svg>
+
+  <div class="map-embed-wrap reveal-up">
+    <iframe
+      class="map-embed"
+      title="Map location of Malta Venue, Duhok, Kurdistan"
+      src="https://www.google.com/maps?q=Duhok,Kurdistan&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- =====================================================
+     DRESS CODE + GIFT PREFERENCE — single torn-paper card
+===================================================== -->
+<section class="section dress-gift-section" id="dress-gift">
+  <div class="torn-card dress-gift-card reveal-up">
+    <img class="corner-floral corner-floral--tr" src="assets/flowers/floral-cluster.png" alt="" aria-hidden="true" loading="lazy">
+    <img class="corner-floral corner-floral--bl" src="assets/flowers/floral-cluster.png" alt="" aria-hidden="true" loading="lazy">
+
+    <h2 class="script-heading">Dress Code</h2>
+    <p class="card-text">We kindly ask guests to avoid deep red and maroon attire for the celebration.</p>
+
+    <h2 class="script-heading" style="margin-top: 2rem;">Gift Preference</h2>
+    <p class="card-text">Kindly, no boxed gifts please.</p>
+  </div>
+</section>
+
+<!-- =====================================================
+     RSVP — wax-seal button opens the popup form
+===================================================== -->
+<section class="section rsvp-section" id="rsvp">
+  <p class="section-eyebrow reveal-up">Confirm Your Attendance</p>
+  <p class="rsvp-text reveal-up">To help us prepare for a joyful celebration, kindly confirm your attendance.</p>
+
+  <button type="button" class="rsvp-seal-btn reveal-up" id="rsvp-open-btn" aria-haspopup="dialog" aria-controls="rsvp-modal">
+    <svg viewBox="0 0 120 120" width="100" height="100" aria-hidden="true">
+      <defs>
+        <radialGradient id="rsvpWax" cx="35%" cy="30%" r="75%">
+          <stop offset="0%" stop-color="#7A1F2B"/>
+          <stop offset="50%" stop-color="#5A0F1B"/>
+          <stop offset="100%" stop-color="#3E0A13"/>
+        </radialGradient>
+      </defs>
+      <path d="M60,6 C82,4 100,18 102,38 C118,44 118,68 100,76 C104,96 84,112 62,108 C48,120 24,116 18,98 C0,96 -4,72 12,60 C4,44 18,24 38,24 C42,10 52,6 60,6 Z" fill="url(#rsvpWax)"/>
+      <circle cx="60" cy="60" r="44" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+      <text x="60" y="66" text-anchor="middle" class="rsvp-seal-text">RSVP</text>
+    </svg>
+  </button>
+
+  <p class="rsvp-hint reveal-up">Click to open</p>
+</section>
+
+</main>
+
+<!-- =====================================================
+     CLOSING — couple photo framed by floral border
+===================================================== -->
+<footer class="closing-section">
+  <div class="closing-photo-wrap">
+    <img src="assets/photos/couple-field.jpg" alt="Siraj and Angeli walking together in a sunlit field" loading="lazy" decoding="async">
+  </div>
+  <p class="closing-script">Hope to see you there!<br>Siraj and Angeli</p>
+</footer>
+
+<!-- =====================================================
+     RSVP MODAL FORM (replaces Tilda's #popup:myform)
+===================================================== -->
+<div class="modal-backdrop" id="rsvp-modal" role="dialog" aria-modal="true" aria-labelledby="rsvp-modal-heading" hidden>
+  <div class="modal-card">
+    <button type="button" class="modal-close" id="rsvp-modal-close" aria-label="Close RSVP form">&times;</button>
+    <h2 class="script-heading" id="rsvp-modal-heading">Confirm Your Attendance</h2>
+
+    <form id="rsvp-form" novalidate>
+      <label class="form-field">
+        <span class="form-label">Your Name</span>
+        <input type="text" name="name" required autocomplete="name" placeholder="Full name">
+      </label>
+
+      <fieldset class="form-fieldset">
+        <legend class="form-label">Will you be attending?</legend>
+        <label class="radio-row"><input type="radio" name="attending" value="yes" checked><span>Accepts with pleasure</span></label>
+        <label class="radio-row"><input type="radio" name="attending" value="no"><span>Declines with regret</span></label>
+      </fieldset>
+
+      <label class="form-field">
+        <span class="form-label">Number of Guests</span>
+        <input type="number" name="guests" min="1" max="10" value="1" inputmode="numeric">
+      </label>
+
+      <button type="submit" class="btn-submit">Submit</button>
+      <p class="form-status" id="rsvp-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<audio id="wei-audio" src="assets/music/wedding-theme.mp3" preload="none" loop></audio>
+<button type="button" id="audio-toggle" class="audio-toggle" aria-label="Toggle background music" style="visibility:hidden; opacity:0;">
+  <svg id="icon-pause" width="24" height="24" viewBox="0 0 24 24" fill="white" style="display:none;"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>
+  <svg id="icon-play" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+<script src="js/countdown.js"></script>
+<script src="js/animation.js"></script>
+</body>
+</html>
+
