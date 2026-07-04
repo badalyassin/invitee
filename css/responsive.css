@@ -1,0 +1,64 @@
+/* ==========================================================================
+   SIRAJ & ANGELI — Wedding Invitation
+   css/responsive.css — Breakpoints: 390 / 430 / 768 / 1024 / 1440
+   ========================================================================== */
+
+/* ---- small phones (iPhone SE / narrow Android), base already mobile-first ---- */
+@media (max-width: 389px) {
+  .hero-names { font-size: 38px; }
+  .section { padding: var(--sp-4) var(--sp-2); }
+  .corner-floral { width: 96px; }
+}
+
+/* ---- 390 / 430 (iPhone standard/plus widths) — base styles already target this ---- */
+@media (min-width: 390px) and (max-width: 767px) {
+  .countdown-row { gap: 0.7rem; }
+}
+
+/* ---- tablets ---- */
+@media (min-width: 768px) {
+  .section { padding: var(--sp-6) var(--sp-4); }
+  .hero-names { font-size: 76px; }
+  .torn-card { padding: var(--sp-5) var(--sp-4); }
+  .modal-card { max-width: 460px; }
+  #weiImg, #weiVideo { max-width: 480px; }
+}
+
+/* ---- desktop: present as a centered "digital card" frame, matching how
+   the reference site's phone-mockup art directs itself — the whole
+   experience is boxed and shadowed rather than stretched edge-to-edge ---- */
+@media (min-width: 1024px) {
+  body {
+    background: #EDE3D2;
+  }
+  #weiOverlay { background: #EDE3D2; }
+  #weiImg, #weiVideo { max-width: 460px; }
+
+  .hero,
+  main,
+  .closing-section {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .hero {
+    box-shadow: 0 40px 90px -30px rgba(60,30,20,0.35);
+  }
+  main { background: var(--c-cream); }
+
+  .hero-names { font-size: 60px; }
+}
+
+@media (min-width: 1440px) {
+  .hero,
+  main,
+  .closing-section { max-width: 620px; }
+  #weiImg, #weiVideo { max-width: 500px; }
+}
+
+/* ---- landscape phones: keep envelope + hero contained, avoid overflow ---- */
+@media (max-height: 500px) and (orientation: landscape) {
+  #weiImg, #weiVideo { max-width: 60vh; }
+  .hero { min-height: 100vh; }
+  .hero-names { font-size: 34px; }
+}
+
